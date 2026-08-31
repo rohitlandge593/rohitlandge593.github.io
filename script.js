@@ -1,16 +1,26 @@
-document.getElementById("year").textContent = new Date().getFullYear();
+const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();
+
 const menu = document.querySelector(".menu");
 const nav = document.querySelector(".nav nav");
-menu.addEventListener("click", () => {
-  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-  if (nav.style.display === "flex") {
-    nav.style.position = "absolute";
-    nav.style.top = "76px";
-    nav.style.right = "18px";
-    nav.style.flexDirection = "column";
-    nav.style.background = "#101419";
-    nav.style.padding = "18px";
-    nav.style.border = "1px solid #282e37";
-    nav.style.borderRadius = "12px";
-  }
-});
+
+if (menu && nav) {
+  menu.addEventListener("click", () => {
+    const open = nav.classList.toggle("is-open");
+    menu.setAttribute("aria-expanded", String(open));
+  });
+
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      menu.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 700) {
+      nav.classList.remove("is-open");
+      menu.setAttribute("aria-expanded", "false");
+    }
+  });
+}

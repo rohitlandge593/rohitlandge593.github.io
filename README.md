@@ -1,14 +1,13 @@
 # Rohit Landge — Developer Portfolio
 
-Responsive personal portfolio for Rohit Landge, built from the supplied Full Stack .NET resume.
+Static, responsive portfolio built from the supplied Full Stack .NET resume.
 
-## Includes
-- Professional hero section with profile photo
-- About, skills, experience, engineering architecture, recognition, education and contact
-- Resume download
-- LinkedIn and email links
-- Responsive mobile navigation
-- Client-confidential information intentionally excluded
+## Run locally
+Open `index.html` in a browser.
 
 ## Deploy
-This is a static HTML/CSS/JS site and can be published directly with GitHub Pages.
+Upload these files to a GitHub repository and enable GitHub Pages from the repository's Pages settings.
+The site is static and requires no backend.
+
+## Important
+The portfolio intentionally excludes client names, confidential implementation details, internal URLs, source code and proprietary information.
